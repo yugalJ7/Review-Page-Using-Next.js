@@ -5,6 +5,7 @@ const StarRating = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
   const [stars, setStars] = useState(5);
+
   return (
     <>
       {[...Array(stars)].map((star, index) => {
@@ -15,7 +16,9 @@ const StarRating = () => {
               fill={currentRating <= (hover || rating) ? "#FFCC33" : "#DCDCDC"}
               onMouseEnter={() => setHover(currentRating)}
               onMouseLeave={() => setHover(null)}
-              onClick={() => setRating(currentRating)}
+              onClick={() => {
+                setRating(currentRating);
+              }}
               size={45}
             />
           </span>

@@ -35,7 +35,6 @@ body {
 
 .sec-header {
   font-size: 1.3rem;
-  /* font-weight: 999; */
   margin-bottom: 0px;
 }
 
@@ -70,20 +69,18 @@ body {
   background-color: var(--background-light-green);
 }
 
-.survey-textbox input {
+.survey-textbox textarea {
   width: 100%;
   height: 25vh;
   border-radius: 8px;
   border: 1px solid #d3d6d7;
   box-sizing: border-box;
-  position: relative;
+  padding: 12px;
+  resize: vertical;
 }
 
-.survey-textbox input::placeholder {
+.survey-textbox textarea::placeholder {
   color: var(--medium-grey-color);
-  position: absolute;
-  top: 12px;
-  left: 15px;
 }
 
 .survey-submit__btn {

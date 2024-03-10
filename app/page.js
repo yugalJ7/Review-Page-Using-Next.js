@@ -8,8 +8,17 @@ import { useState } from "react";
 export default function Home() {
   const [thumbsUp, setThumbsUp] = useState(false);
   const [thumbsDown, setThumbsDown] = useState(false);
+  const [experience, setExperience] = useState("");
+
+  const handleAlertOnClick = (e) => {
+    e.preventDefault();
+    alert(`Thanks for Review`);
+
+    setExperience("");
+  };
+
   return (
-    <div className="survey-container">
+    <form className="survey-container">
       <div>
         <GrClose size={20} />
       </div>
@@ -32,16 +41,22 @@ export default function Home() {
         <div className=" thumbs-icon__review">
           <div className="dc">
             <FaThumbsDown
-              onClick={() => setThumbsUp(!thumbsUp)}
-              fill={thumbsUp ? "#6BB383" : "#DCDCDC"}
+              onClick={() => {
+                setThumbsUp(false);
+                setThumbsDown(!thumbsDown);
+              }}
+              fill={thumbsDown ? "#6BB383" : "#DCDCDC"}
               size={40}
             />
             <span>No</span>
           </div>
           <div className="dc">
             <FaThumbsUp
-              onClick={() => setThumbsDown(!thumbsDown)}
-              fill={thumbsDown ? "#6BB383" : "#DCDCDC"}
+              onClick={() => {
+                setThumbsDown(false);
+                setThumbsUp(!thumbsUp);
+              }}
+              fill={thumbsUp ? "#6BB383" : "#DCDCDC"}
               size={40}
             />
             <span>Yes</span>
@@ -59,9 +74,16 @@ export default function Home() {
           How was your overall experience? What's that one thing you won't
           forget Trausti for?
         </p>
-        <input type="text" placeholder="Come on, you Know the drill." />
+        <textarea
+          type="text"
+          placeholder="Come on, you Know the drill."
+          onChange={(e) => setExperience(e.target.value)}
+          value={experience}
+        ></textarea>
       </div>
-      <button className="survey-submit__btn">Publish Review</button>
-    </div>
+      <button className="survey-submit__btn" onClick={handleAlertOnClick}>
+        Publish Review
+      </button>
+    </form>
   );
 }
