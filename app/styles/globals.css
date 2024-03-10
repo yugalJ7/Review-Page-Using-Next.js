@@ -33,13 +33,13 @@ body {
   margin-top: 2px;
 }
 
-.secondary-header {
+.sec-header {
   font-size: 1.3rem;
   /* font-weight: 999; */
   margin-bottom: 0px;
 }
 
-.description {
+.descr {
   font-size: 12px;
   margin-top: 5px;
   font-family: "Open Sans", sans-serif;
@@ -52,7 +52,25 @@ body {
   align-items: center;
 }
 
-.survey-about__textbox input {
+.survey-praise_tags {
+  width: 85%;
+}
+
+.survey-praise_tags button {
+  padding: 12px 10px;
+  margin: 2px;
+  border: none;
+  background-color: #f5f3f0;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.survey-praise_tags button:hover {
+  background-color: var(--background-light-green);
+}
+
+.survey-textbox input {
   width: 100%;
   height: 25vh;
   border-radius: 8px;
@@ -61,14 +79,14 @@ body {
   position: relative;
 }
 
-.survey-about__textbox input::placeholder {
+.survey-textbox input::placeholder {
   color: var(--medium-grey-color);
   position: absolute;
   top: 12px;
   left: 15px;
 }
 
-button {
+.survey-submit__btn {
   width: 100%;
   border: none;
   padding: 13px 0px;
@@ -80,6 +98,7 @@ button {
   font-size: 12px;
   font-weight: 650;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .pb {
